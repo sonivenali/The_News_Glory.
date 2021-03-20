@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_daily_app/screens/menu.dart';
 import 'package:news_daily_app/screens/news_tab.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,7 +15,7 @@ class _HomePageState extends State<HomePage>
   void initState() {
     // TODO: implement initState
     super.initState();
-    tabcontroller = TabController(length: 2, vsync: this);
+    tabcontroller = TabController(length: 9, vsync: this);
   }
 
   @override
@@ -22,9 +23,17 @@ class _HomePageState extends State<HomePage>
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Color(0xff311b92),
-          leading: Icon(Icons.menu),
+          leading: GestureDetector(
+            child: Icon(Icons.menu),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Menu()),
+              );
+            },
+          ),
           title: Text(
-            "Daily News",
+            "The News Glory",
             style: TextStyle(
                 color: Colors.white, fontSize: 24, fontWeight: FontWeight.w700),
           ),
@@ -39,28 +48,60 @@ class _HomePageState extends State<HomePage>
 
   Widget buildTabView() {
     return Expanded(
-            child: TabBarView(
-              children: [NewsTab("business"), NewsTab("travel")],
-              controller: tabcontroller,
-            ),
-          );
+      child: TabBarView(
+        children: [
+          NewsTab("business"),
+          NewsTab("travel"),
+          NewsTab("travel"),
+          NewsTab("travel"),
+          NewsTab("travel"),
+          NewsTab("travel"),
+          NewsTab("travel"),
+          NewsTab("travel"),
+          NewsTab("travel"),
+        ],
+        controller: tabcontroller,
+      ),
+    );
   }
 
   TabBar buildTabBar() {
     return TabBar(
-            unselectedLabelColor: Colors.blueGrey,
-            labelColor: Colors.black,
-            tabs: [
-              Tab(
-                text: "Business",
-              ),
-              Tab(
-                text: "Travel",
-              )
-            ],
-            controller: tabcontroller,
-            indicatorColor: Colors.black,
-            indicatorSize: TabBarIndicatorSize.tab,
-          );
+      isScrollable: true,
+      unselectedLabelColor: Colors.blueGrey,
+      labelColor: Colors.black,
+      tabs: [
+        Tab(
+          text: "Business",
+        ),
+        Tab(
+          text: "Travel",
+        ),
+        Tab(
+          text: "Community",
+        ),
+        Tab(
+          text: "Education",
+        ),
+        Tab(
+          text: "Culture",
+        ),
+        Tab(
+          text: "Fashion",
+        ),
+        Tab(
+          text: "Money",
+        ),
+        Tab(
+          text: "Film",
+        ),
+        Tab(
+          text: "Society",
+        ),
+      ],
+      controller: tabcontroller,
+      indicatorColor: Colors.black,
+      indicatorSize: TabBarIndicatorSize.tab,
+    );
   }
 }

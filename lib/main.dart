@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:news_daily_app/screens/home_page.dart';
 
 void main() {
-  runApp(NewsDaily());
+  runApp(TheNewsGlory());
 }
 
-class NewsDaily extends StatelessWidget {
+class TheNewsGlory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
