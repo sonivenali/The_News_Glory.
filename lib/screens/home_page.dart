@@ -22,6 +22,16 @@ class _HomePageState extends State<HomePage>
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(bottom: 8,right: 12),
+              child: Image.network(
+                "https://media1.thehungryjpeg.com/thumbs2/ori_3801553_fryb65v7v4wrvvg7u70h5sy15pvskm1287rgpu0e_monogram-ng-logo-design.jpg",
+                height: 50,
+                width: 50,
+              ),
+            )
+          ],
           backgroundColor: Color(0xff311b92),
           leading: GestureDetector(
             child: Icon(Icons.menu),
