@@ -14,7 +14,7 @@ class _NewsTabState extends State<NewsTab> {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        Text("hi")
+        Text("")
       ],
     );
   }
