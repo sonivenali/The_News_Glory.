@@ -42,10 +42,11 @@ class NewsCard extends StatelessWidget {
   final Results news;
   NewsCard({this.news});
   @override
-  Widget build(BuildContext context) {
+  Widget  build(BuildContext context) {
     return Card(
-        child: Row(
-      children: [Text(news.webTitle)],
-    ));
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(news.webTitle),
+        ));
   }
 }

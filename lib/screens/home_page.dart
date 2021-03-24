@@ -30,7 +30,6 @@ class _HomePageState extends State<HomePage>
                 height: 50,
                 width: 50,
               ),
-
             )
           ],
           backgroundColor: Color(0xff311b92),

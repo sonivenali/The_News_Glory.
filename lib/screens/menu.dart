@@ -24,8 +24,11 @@ class _MenuState extends State<Menu> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 16,left: 8,bottom: 8),
-              child: Text("The News Glory",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700),),
+              padding: const EdgeInsets.only(top: 16, left: 8, bottom: 8),
+              child: Text(
+                "The News Glory",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+              ),
             ),
             buildHomeButton("World"),
             buildHomeButton("Technology"),
@@ -64,7 +67,7 @@ class _MenuState extends State<Menu> {
         children: [
           Text(
             name,
-            style: TextStyle(color: Colors.grey[800],fontSize: 15),
+            style: TextStyle(color: Colors.grey[800], fontSize: 15),
           ),
         ],
       ),

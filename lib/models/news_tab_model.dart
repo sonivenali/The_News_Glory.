@@ -32,15 +32,15 @@ class Response {
 
   Response(
       {this.status,
-        this.userTier,
-        this.total,
-        this.startIndex,
-        this.pageSize,
-        this.currentPage,
-        this.pages,
-        this.edition,
-        this.section,
-        this.results});
+      this.userTier,
+      this.total,
+      this.startIndex,
+      this.pageSize,
+      this.currentPage,
+      this.pages,
+      this.edition,
+      this.section,
+      this.results});
 
   Response.fromJson(Map<String, dynamic> json) {
     status = json['status'];
@@ -51,9 +51,9 @@ class Response {
     currentPage = json['currentPage'];
     pages = json['pages'];
     edition =
-    json['edition'] != null ? new Edition.fromJson(json['edition']) : null;
+        json['edition'] != null ? new Edition.fromJson(json['edition']) : null;
     section =
-    json['section'] != null ? new Section.fromJson(json['section']) : null;
+        json['section'] != null ? new Section.fromJson(json['section']) : null;
     if (json['results'] != null) {
       results = new List<Results>();
       json['results'].forEach((v) {
@@ -162,16 +162,16 @@ class Results {
 
   Results(
       {this.id,
-        this.type,
-        this.sectionId,
-        this.sectionName,
-        this.webPublicationDate,
-        this.webTitle,
-        this.webUrl,
-        this.apiUrl,
-        this.isHosted,
-        this.pillarId,
-        this.pillarName});
+      this.type,
+      this.sectionId,
+      this.sectionName,
+      this.webPublicationDate,
+      this.webTitle,
+      this.webUrl,
+      this.apiUrl,
+      this.isHosted,
+      this.pillarId,
+      this.pillarName});
 
   Results.fromJson(Map<String, dynamic> json) {
     id = json['id'];
