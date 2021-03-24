@@ -20,10 +20,11 @@ class _NewsTabState extends State<NewsTab> {
         future: service.getNewsTab(widget.category),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return ListView.builder( itemCount: snapshot.data.response.results.length,
+            return ListView.builder(
+                itemCount: snapshot.data.response.results.length,
                 itemBuilder: (context, index) => NewsCard(
-                  news: snapshot.data.response.results[index],
-                ));
+                      news: snapshot.data.response.results[index],
+                    ));
           } else if (snapshot.hasError) {
             return Center(
               child: Text("Something went Wrong"),
@@ -35,21 +36,16 @@ class _NewsTabState extends State<NewsTab> {
           }
         });
   }
-
 }
-
-
 
 class NewsCard extends StatelessWidget {
   final Results news;
   NewsCard({this.news});
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text(news.webTitle),
-    );
+    return Card(
+        child: Row(
+      children: [Text(news.webTitle)],
+    ));
   }
 }
-
-
-
