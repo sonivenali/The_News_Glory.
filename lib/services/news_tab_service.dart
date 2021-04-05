@@ -8,8 +8,7 @@ class NewsTabService {
       final response = await http.get(
         'https://content.guardianapis.com/$category?api-key=e8cc8e23-6dbb-402c-90f1-0289b2a7f70a',
       );
-      final data = json.decode(response.body);
-      print(data);
+      final data = json.decode(utf8.decode(response.bodyBytes));
       return NewsTabModel.fromJson(data);
     } catch (e, stacktrace) {
       print(stacktrace);
