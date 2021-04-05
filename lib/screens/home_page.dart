@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:news_daily_app/screens/menu.dart';
 import 'package:news_daily_app/screens/news_tab.dart';
 
 class HomePage extends StatefulWidget {
@@ -21,7 +20,7 @@ class _HomePageState extends State<HomePage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
+        appBar: AppBar(centerTitle: false,
           actions: [
             Padding(
               padding: const EdgeInsets.only(bottom: 8, right: 12),
@@ -33,15 +32,6 @@ class _HomePageState extends State<HomePage>
             )
           ],
           backgroundColor: Color(0xff311b92),
-          leading: GestureDetector(
-            child: Icon(Icons.menu),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Menu()),
-              );
-            },
-          ),
           title: Text(
             "The News Glory",
             style: TextStyle(
